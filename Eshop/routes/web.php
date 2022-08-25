@@ -38,8 +38,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::post('insert-category',[App\Http\Controllers\Admin\CategoryController::class, 'insert']);
     Route::get('edit-prod/{id}',[App\Http\Controllers\Admin\CategoryController::class, 'edit']);    
     Route::put('update-category/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);  
-    Route::get('delete-category/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);  
-
+    Route::get('delete-category/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']); 
+    
+   // products
+    Route::get('product', [App\Http\Controllers\Admin\ProductController::class, 'index']);
+    Route::get('add-product', [App\Http\Controllers\Admin\ProductController::class, 'add']);  
+    Route::post('insert-product', [App\Http\Controllers\Admin\ProductController::class, 'insert']);
+    Route::get('edit-prod/{id}',[App\Http\Controllers\Admin\ProductController::class, 'edit']);
+    Route::put('update-product/{id}',[App\Http\Controllers\Admin\ProductController::class,'update']); 
+    Route::get('delete-product/{id}',[App\Http\Controllers\Admin\ProductController::class,'destroy']);    
+    
  
 
   });

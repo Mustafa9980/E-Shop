@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();  
             $table->bigInteger('cate_id');
             $table->string('name');
+            $table->string('slug');
             $table->mediumText('small_description');
             $table->longText('description');
             $table->string('original_price');
@@ -29,10 +30,6 @@ return new class extends Migration
             $table->mediumText('meta_title');
             $table->mediumText('meta_keywords');
             $table->mediumText('mate_description');
-
-
-
-            $table->id();
 
 
             $table->timestamps();
