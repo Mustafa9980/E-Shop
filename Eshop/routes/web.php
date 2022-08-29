@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
+Route::get('category',[App\Http\Controllers\Frontend\FrontendController::class,'category']);
+Route::get('view-category/{slug}',[App\Http\Controllers\Frontend\FrontendController::class,'viewcategory']);
+Route::get('category/{cate_slug}/{pro_slug}',[App\Http\Controllers\Frontend\FrontendController::class,'viewproducts']);
 Auth::routes();
 
 
@@ -36,7 +40,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('categorise',[App\Http\Controllers\Admin\CategoryController::class, 'index']);
     Route::get('add-category',[App\Http\Controllers\Admin\CategoryController::class, 'add']);
     Route::post('insert-category',[App\Http\Controllers\Admin\CategoryController::class, 'insert']);
-    Route::get('edit-prod/{id}',[App\Http\Controllers\Admin\CategoryController::class, 'edit']);    
+    Route::get('edit-category/{id}',[App\Http\Controllers\Admin\CategoryController::class, 'edit']);    
     Route::put('update-category/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);  
     Route::get('delete-category/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']); 
     
