@@ -14,6 +14,7 @@ Category
             <div class="col-md-12">
                 <h2>All Categoryes</h2>
                 <div class="row">
+                   
                     @foreach ($category as $cate )
                     <div class="col-md-3 mb-3">
                         <a href="{{ url('view-category/'.$cate->slug) }}" >
